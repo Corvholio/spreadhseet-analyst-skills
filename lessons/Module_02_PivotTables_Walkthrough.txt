@@ -1,0 +1,116 @@
+
+📘 MODULE 2 – Pivot Tables for KPI Tracking (Google Sheets or Excel)
+
+🎯 OBJECTIVE:
+Build interactive pivot tables to track sales performance by region, product, and sales rep using real formulas and charts.
+
+---
+
+🧠 SCENARIO:
+You’ve been asked to summarize performance for a sales team operating across four regions. You’ve been given raw sales data including transaction dates, sales reps, regions, products, and amounts. Executives want to quickly spot top-performing regions and reps.
+
+---
+
+📂 DATA COLUMNS:
+- Date
+- Region
+- Sales_Rep
+- Product
+- Units_Sold
+- Unit_Price
+- Total_Sale
+
+---
+
+✅ WHAT YOU'LL LEARN:
+- Creating pivot tables in Google Sheets or Excel
+- Grouping dates by month
+- Calculating totals and averages
+- Adding filters and slicers
+- Building a dashboard-style chart
+
+---
+
+📄 STEP-BY-STEP INSTRUCTIONS:
+
+🔹 STEP 1: Load the Data
+- Open the provided sales file or copy the data into a new sheet.
+- Ensure `Total_Sale` is correct (you can re-calculate with `=Units_Sold * Unit_Price` if needed).
+
+---
+
+🔹 STEP 2: Create a Pivot Table by Region and Month
+1. Select all data.
+2. Go to **Insert > Pivot Table**.
+3. Choose to place it in a new sheet.
+4. Configure the pivot table:
+   - **Rows** → Add: `Region`
+   - **Columns** → Add: `Date`
+   - Right-click a date in the pivot and choose “Group” → group by **Months**
+   - **Values** → Add: `Total_Sale` → set to **SUM**
+
+This shows monthly total sales per region.
+
+---
+
+🔹 STEP 3: Pivot by Product and Region
+1. Create a second pivot table (new sheet).
+2. Setup:
+   - **Rows** → Product
+   - **Columns** → Region
+   - **Values** → Total_Sale (SUM)
+
+This shows product popularity across regions.
+
+---
+
+🔹 STEP 4: Sales Rep Performance Table
+1. Insert another pivot.
+2. Setup:
+   - **Rows** → Sales_Rep
+   - **Values**:
+     - Total_Sale (SUM)
+     - Total_Sale again → set to **Average**
+
+Now you can see total sales and average sale size per rep.
+
+---
+
+🔹 STEP 5: Add Filters
+- To any pivot, add:
+  - **Filter** → Date (so you can choose specific months)
+  - Optional: Region or Product filters
+
+---
+
+🔹 STEP 6: Add a Chart
+1. Select the Region vs. Total Sales pivot.
+2. Go to **Insert > Chart**.
+3. Use a **Column Chart** or **Stacked Bar Chart**.
+4. Title the chart: `"Total Sales by Region"`
+
+---
+
+💡 TIPS:
+- Right-click any value in the pivot table to format as currency
+- Use slicers in Google Sheets for interactivity
+- Use cell formatting to bold totals and differentiate headers
+
+---
+
+📝 DELIVERABLE CHECKLIST:
+
+| Task | Status |
+|------|--------|
+| Pivot 1 – Region × Month (Total Sales) | ✅ |
+| Pivot 2 – Product × Region (Total Sales) | ✅ |
+| Pivot 3 – Sales Rep Totals and Averages | ✅ |
+| Chart – Region Sales | ✅ |
+| Filters Added | ✅ |
+
+---
+
+This module gives you the core reporting layout used in most business intelligence dashboards built from spreadsheets.
+
+Save your file as `Pivot_Module_SalesDashboard.xlsx` or upload to Google Sheets to share.
+
