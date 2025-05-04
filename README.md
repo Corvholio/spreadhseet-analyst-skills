@@ -1,1 +1,1 @@
-# spreadhseet-analyst-skills
+# spreadsheet-analyst-skills
