@@ -1,0 +1,125 @@
+
+📘 MODULE 3 – Conditional Formatting + IF Logic in Google Sheets or Excel
+
+🎯 OBJECTIVE:
+Use conditional formatting and basic IF/AND/OR logic to build a smart, readable order review sheet. This exercise teaches how to flag issues automatically and format cells to guide human reviewers.
+
+---
+
+🧠 SCENARIO:
+Your operations team reviews orders daily to spot risks — like overdue payments, large invoices, and product returns. They want a dashboard-like table where those issues are automatically highlighted and labeled.
+
+---
+
+📂 DATA COLUMNS:
+- Customer_ID
+- Order_ID
+- Category
+- Order_Date
+- Invoice_Amount
+- Payment_Status (Paid, Unpaid, Overdue)
+- Delivery_Days
+- Returned (Yes/No)
+
+---
+
+✅ WHAT YOU'LL LEARN:
+- Conditional Formatting Rules
+- IF, AND, OR formulas
+- Flagging issues using formulas
+- Smart labeling for dashboards
+
+---
+
+📄 STEP-BY-STEP INSTRUCTIONS:
+
+🔹 STEP 1: Import the Data
+- Copy or open the provided sales data into a new Google Sheet or Excel workbook.
+- Verify all columns are present and `Invoice_Amount` is numerical.
+
+---
+
+🔹 STEP 2: Format Invoice Amounts
+- Select the `Invoice_Amount` column.
+- Apply currency formatting (Google Sheets: Format > Number > Currency)
+
+---
+
+🔹 STEP 3: Add Issue Flag Columns
+
+1. `Late_Payment_Flag`
+```excel
+=IF(E2="Overdue", TRUE, FALSE)
+```
+
+2. `High_Amount_Flag` (Flag if amount is over $750)
+```excel
+=IF(D2>750, TRUE, FALSE)
+```
+
+3. `Returned_Flag`
+```excel
+=IF(F2="Yes", TRUE, FALSE)
+```
+
+*Adjust column letters as needed based on layout.*
+
+---
+
+🔹 STEP 4: Add Conditional Formatting Rules
+
+1. **Highlight overdue payments**
+   - Select the `Payment_Status` column.
+   - Format > Conditional Formatting
+   - Apply rule: Text is exactly “Overdue” → Fill red
+
+2. **Highlight large invoices**
+   - Select `Invoice_Amount`
+   - Format > Conditional Formatting
+   - Apply rule: Greater than `750` → Fill yellow
+
+3. **Highlight returned orders**
+   - Select the `Returned` column
+   - Rule: Text is exactly “Yes” → Fill light purple
+
+---
+
+🔹 STEP 5: Add an “Issue Summary” Column
+
+Create a summary column using nested IF/OR logic:
+```excel
+=IF(OR(A2="Overdue", D2>750, F2="Yes"), "Review", "OK")
+```
+
+Or a more detailed message:
+```excel
+=IF(A2="Overdue", "Late Payment", IF(D2>750, "High Amount", IF(F2="Yes", "Returned", "OK")))
+```
+
+Use whichever fits your need — simplicity or detail.
+
+---
+
+🔹 STEP 6: Add Filter View or Slicer (Optional)
+- Highlight the entire table
+- Use Data > Create a filter
+- Filter by “Review” in the Issue Summary column
+
+---
+
+📝 DELIVERABLE CHECKLIST:
+
+| Task | Done? |
+|------|--------|
+| Currency formatting on Invoice Amount | ✅ |
+| Flags for overdue, high amount, and returns | ✅ |
+| Conditional formatting applied | ✅ |
+| Issue summary column works | ✅ |
+| Optional: Filter enabled | ✅ |
+
+📄 Save As: module_03_flags_dashboard.xlsx or Google Sheets
+
+---
+
+This module reinforces your ability to automate visual feedback for decision-makers — a critical skill in spreadsheets.
+
